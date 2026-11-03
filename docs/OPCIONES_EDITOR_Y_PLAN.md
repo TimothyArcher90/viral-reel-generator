@@ -90,3 +90,21 @@ Si CapCut no respeta alfa, el plan B para texto claro es una capa de fondo negro
 1. **El video de la persona** (Fase 2). Mientras tanto avanzo la Fase 1.
 2. **OK para instalar Geist en Windows** (solo tu usuario, sin admin).
 3. Elegir: ¿empezamos con **A** y pasamos a **B**, como recomiendo?
+
+---
+
+## Resultados de la Fase 1 (2026-11-03)
+
+**Verificado (medido):**
+- ProRes 4444 con alfa: el alfa se conserva. Una caja al 50 % compuesta sobre gris 128 da (163, 175, 87), la mezcla esperada.
+- WebM VP9 con alfa: el alfa se conserva (50 % medido como 129 de 255).
+- El MCP de CapCut crea borradores con la capa de alfa como overlay y el .srt como pista de texto editable: `TEST_MW_alfa_mov` y `TEST_MW_alfa_webm` (base sintética de 6 s, no es la persona).
+- Detalle técnico: dibujar con `drawbox`/`drawtext` de ffmpeg sobre fondo transparente NO escribe alfa; las capas se generan desde RGBA (PIL o HyperFrames). Script: `scripts/prueba_alfa.py`.
+
+**Pendiente de ver con los ojos (CapCut no se pudo abrir desde aquí: permiso de control denegado):**
+1. En `TEST_MW_alfa_mov` y en `TEST_MW_alfa_webm`: ¿la tarjeta oscura con "Secretos" en lima flota sobre el patrón y el resto queda transparente?
+2. ¿La caja lima inferior deja ver el patrón a través (50 %)?
+3. ¿Los dos subtítulos de prueba se pueden seleccionar y editar como texto?
+Si el alfa no se respeta en CapCut: plan B de la sección de subtítulos (capa negra con mezcla "Aclarar") y paneles como MP4 opaco.
+
+**No probado:** fuente Geist dentro de CapCut (requiere instalarla en Windows; pendiente de tu OK).
