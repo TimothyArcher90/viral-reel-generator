@@ -1,0 +1,27 @@
+{
+  "proyecto": "ejemplo-v1",
+  "lienzo": { "ancho": 1080, "alto": 1920, "fps": 30 },
+  "base": { "video": "01_RAW/persona.mp4", "nota": "nunca se modifica; los cortes son una lista de in/out" },
+  "cortes": [
+    { "in": 0.0, "out": 42.5, "motivo": "inicio de frase a fin de frase" }
+  ],
+  "subtitulos": {
+    "fuente": "03_TRANSCRIPT/palabras.json",
+    "estilo": "brand/tokens.json#subtitulos",
+    "keywords": ["manual: lista de palabras a resaltar en lima"],
+    "salidas": ["srt_editable", "capa_animada_alfa"]
+  },
+  "capas": [
+    { "id": "titulo-1", "tipo": "titulo", "motor": "hyperframes", "t": [0.0, 3.0], "caja": "tercio-superior",
+      "texto": { "linea1": "3 códigos", "linea2": "Secretos" }, "salida": "04_GRAPHICS/titulo-1.mov" },
+    { "id": "mapa-1", "tipo": "mapa", "motor": "electric-eye", "t": [8.0, 14.0], "caja": "panel-superior",
+      "encargo": "Estrecho de Taiwán, bloqueo naval", "salida": "04_GRAPHICS/mapa-1.mp4" },
+    { "id": "grafica-1", "tipo": "grafica-precio", "motor": "ride-the-lightning", "t": [20.0, 28.0], "caja": "panel-superior",
+      "datos": { "serie": "bm_gold", "desde": "completa" }, "salida": "04_GRAPHICS/grafica-1.mp4",
+      "cifras": "solo desde datos, con fuente; el compilador genera el informe de verificación" },
+    { "id": "panel-1", "tipo": "panel-checklist", "motor": "hyperframes", "t": [30.0, 38.0], "caja": "panel-superior",
+      "filas": ["Paso uno", "Paso dos", "Paso tres"], "salida": "04_GRAPHICS/panel-1.mp4" }
+  ],
+  "cifras_a_verificar": [],
+  "entregables": ["borrador_capcut", "overlays_prores_alfa", "srt", "mp4_referencia"]
+}

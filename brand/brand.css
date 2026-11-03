@@ -1,0 +1,25 @@
+/* MacroWise · línea gráfica de video. Fuente de verdad: brand/tokens.json */
+@font-face { font-family: "Geist"; src: url("fonts/Geist-VariableFont_wght.ttf") format("truetype"); font-weight: 100 900; }
+@font-face { font-family: "Geist Mono"; src: url("fonts/GeistMono-VariableFont_wght.ttf") format("truetype"); font-weight: 100 900; }
+
+:root {
+  --mw-fondo: #1A1A17;
+  --mw-tarjeta: #232320;
+  --mw-profundidad: #0C0C14;
+  --mw-texto: #D6D1C8;
+  --mw-texto-2: #B8B3A9;
+  --mw-borde: #CBC6BC;
+  --mw-blanco: #FFFFFF;
+  --mw-keyword: #C6DD2E;
+  --mw-valor: #C9A84C;
+  --mw-tecnico: #50B5A2;
+  --mw-geopolitica: #73247D;
+  --mw-coste: #C44A33;
+}
+
+.mw-titular { font-family: "Geist", sans-serif; font-weight: 600; letter-spacing: -0.03em; color: var(--mw-blanco); }
+.mw-etiqueta { font-family: "Geist Mono", monospace; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
+.mw-tarjeta { background: var(--mw-tarjeta); color: var(--mw-texto); border: 1px solid rgba(203,198,188,.3); border-radius: 24px; padding: 36px; }
+.mw-panel { background: var(--mw-fondo); }
+.mw-subtitulo { font-family: "Geist", sans-serif; font-weight: 700; font-size: 64px; line-height: 1.05; color: #fff; text-align: center; text-shadow: 0 2px 10px rgba(0,0,0,.45); }
+.mw-subtitulo .kw { color: var(--mw-keyword); font-style: italic; }
